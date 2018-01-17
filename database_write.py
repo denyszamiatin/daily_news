@@ -8,9 +8,6 @@ class SaveToMDB:
         self.db = self.client[MONGODB_DB]
         self.collection = self.db[MONGODB_COLLECTION]
 
-    def insert(self, dict):
-        return self.collection.insert_one(dict).inserted_id
-
 
 class InsertData:
     def __init__(self, title, text, link, date):
@@ -29,5 +26,5 @@ class InsertData:
 save_to_mdb = SaveToMDB()
 
 
-def insert(db, dict):
-    return db.collection.insert_one(dict).inserted_id
+def insert(dict):
+    return save_to_mdb.collection.insert_one(dict).inserted_id
