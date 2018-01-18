@@ -3,21 +3,17 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-def ConfigSectionMap(section):
-    dict1 = {}
-    options = config.options(section)
-    for option in options:
-        try:
-            dict1[option] = config.get(section, option)
-            if dict1[option] == -1:
-                print("skip: %s" % option)
-        except:
-            print("exception on %s!" % option)
-            dict1[option] = None
-    return dict1
 
-websites = ConfigSectionMap('WEBSITES')
-key_words = ConfigSectionMap('key_words')
+def get_section(section):
+    if section not in config:
+        return {}
+    return {option:config.get(section, option) for option in options}
 
-print(websites)
-print(key_words)
+
+websites = get_section('WEBSITES')
+key_words = get_section('key_words')
+
+
+if __name__ == '__main__':
+    print(websites)
+    print(key_words)
