@@ -7,3 +7,5 @@ date = '2017.10.30'
 
 ins_data = database_write.InsertData(title, text, link, date)
 database_write.insert(ins_data.to_dict())
+
+# Comment
