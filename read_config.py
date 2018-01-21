@@ -3,11 +3,10 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-
 def get_section(section):
     if section not in config:
         return {}
-    return {option:config.get(section, option) for option in options}
+    return {option:config.get(section, option) for option in config.options(section)}
 
 
 websites = get_section('WEBSITES')
