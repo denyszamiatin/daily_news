@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block content %}
+<p>{{message}}</p>
+<form method="get">
+    <p>Hold down the Ctrl (Windows) / Command (Mac) button to select multiple options.</p>
+    <p><select name="news websites" size="5" multiple>
+        <option value="website1">website1</option>
+        <option value="website2">website2</option>
+        <option value="website3">website3</option>
+    </select></p>
+    <p>Input one or more keywords, separated by comma</p>
+    <p><input type="text" name="keyword" value='{{keyword}}' placeholder="keyword(s)"></p>
+    <p><input type="submit" value="start engine"></p>
+</form>
+{% endblock %}

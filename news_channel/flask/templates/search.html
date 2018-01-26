@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+<p>{{message}}</p>
+
+
+<form action = "http://localhost:5000/result" method="get">
+    <p><small>Choose a website from the list:</small></p>
+    <input list="news websites" name="websites">
+    <datalist id="news websites">
+        <option value="website1">
+        <option value="website2">
+        <option value="website3">
+        <option value="website4">
+    </datalist></p> 
+    <p><small>Input one or more keywords, separated by comma:</small></p>
+    <p><textarea name="keywords" rows="5" cols="30"></textarea></p>
+    <p><input type="submit" value="start engine">
+    <input type="reset" value="reset"></p>
+{% endblock %}

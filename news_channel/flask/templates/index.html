@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <h1>News Search Engine</h1>
+    {% block content %}
+    <p>{{message}}</p>
+    <p><a href='/search'>start new search</a></p>
+    {% endblock %}
+    {% include 'footer.html' %}
+</body>
+</html>
